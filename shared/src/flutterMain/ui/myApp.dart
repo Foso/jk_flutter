@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:jk_flutter/myhomepage.dart';
-
-void main() => runApp(MyApp());
+import 'list_view_example.dart';
+import 'networkview.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -11,10 +9,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Fluttbger Demo Home Page'),
+      home: NetworkView(),
     );
   }
 }
