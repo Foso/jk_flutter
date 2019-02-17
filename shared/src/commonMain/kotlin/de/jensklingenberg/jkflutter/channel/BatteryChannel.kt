@@ -9,3 +9,11 @@ class BatteryChannel{
     }
 
 }
+
+class TimerEventChannel{
+    companion object {
+        val CHANNEL = "com.yourcompany.eventchannelsample/stream"
+    }
+
+}
+

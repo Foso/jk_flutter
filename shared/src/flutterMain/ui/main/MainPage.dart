@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../eventChannelSample/EventChannelSample.dart';
 import '../login/LoginWidget.dart';
 import '../networkview.dart';
 import '../platform_specific/BatterieLevel.dart';
 import '../search/SearchExample.dart';
+import '../toast/Home.dart';
 import 'MainDrawer.dart';
 
 class MainPage extends StatelessWidget {
@@ -47,6 +49,27 @@ class MainPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => BatterieLevel()),
+              );
+            },
+          ),
+          RaisedButton(
+            child: Text('Eventchannel'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => EventChannelSamplePage(
+                          title: "Hall",
+                        )),
+              );
+            },
+          ),
+          RaisedButton(
+            child: Text('Toast'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
