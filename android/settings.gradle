@@ -1,5 +1,12 @@
 include ':app'
+include ':shared'
+
+
 def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
+
+project(':shared').projectDir = new File(flutterProjectRoot.toFile(), '/shared')
+
+
 
 def plugins = new Properties()
 def pluginsFile = new File(flutterProjectRoot.toFile(), '.flutter-plugins')

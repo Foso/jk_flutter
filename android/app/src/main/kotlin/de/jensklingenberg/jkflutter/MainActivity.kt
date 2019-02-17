@@ -1,6 +1,7 @@
 package de.jensklingenberg.jkflutter
 
 import android.os.Bundle
+import de.jensklingenberg.jkflutter.channel.BatteryChannel
 
 import io.flutter.app.FlutterActivity
 import io.flutter.plugin.common.MethodChannel
@@ -8,7 +9,6 @@ import io.flutter.plugins.GeneratedPluginRegistrant
 
 class MainActivity : FlutterActivity(), MainContract.View {
 
-  private val CHANNEL = "samples.flutter.io/battery1"
   lateinit var presenter : MainPresenter
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,9 +16,9 @@ class MainActivity : FlutterActivity(), MainContract.View {
     GeneratedPluginRegistrant.registerWith(this)
     presenter = MainPresenter(this)
 
-    MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+    MethodChannel(flutterView, BatteryChannel.CHANNEL).setMethodCallHandler { call, result ->
       when(call.method) {
-        "getBatteryLevel" -> {
+        BatteryChannel.METHOD_BATTERIE -> {
           val batteryLevel = presenter.getBatteryLevel(this)
           if (batteryLevel != -1) {
             result.success( batteryLevel)

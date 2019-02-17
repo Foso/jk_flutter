@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
 import android.os.Build
+import sample.Scaffold
 
 class MainPresenter(val view: MainContract.View) : MainContract.Presenter {
     override fun onGetBatteryLevel() {
@@ -22,6 +23,7 @@ class MainPresenter(val view: MainContract.View) : MainContract.Presenter {
 
     fun getBatteryLevel(context: Context): Int {
         val batteryLevel: Int
+        Scaffold()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val batteryManager = context.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
             batteryLevel = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)

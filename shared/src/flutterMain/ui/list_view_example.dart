@@ -11,18 +11,6 @@ class ListViewExample extends StatefulWidget {
 }
 
 class _ListViewExampleState extends State<ListViewExample> {
-  // Get battery level.
-  String _batteryLevel = 'Unknown battery level.';
-
-  Future<void> _getBatteryLevel() async {
-    String batteryLevel;
-    batteryLevel = await MethodChannelHelper.getBatteryLevel();
-
-    setState(() {
-      _batteryLevel = batteryLevel;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

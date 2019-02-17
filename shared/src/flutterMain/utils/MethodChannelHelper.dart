@@ -7,7 +7,7 @@ class MethodChannelHelper {
     String batteryLevel;
     try {
       final int result = await platform.invokeMethod('getBatteryLevel');
-      batteryLevel = 'Battery lehvel at $result % .';
+      batteryLevel = 'Battery le hvel at $result % .';
     } on PlatformException catch (e) {
       batteryLevel = "Failed to get battery level: '${e.message}'.";
     }

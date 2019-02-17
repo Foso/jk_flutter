@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
-import 'NavigationApp.dart';
+import 'ui/main/MainApp.dart';
 
-void main() => runApp(NavigationApp());
+void main() => runApp(MainApp());
